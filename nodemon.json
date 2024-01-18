@@ -1,0 +1,10 @@
+{
+  "watch": ["src"],
+  "ext": ".ts,.js",
+  "ignore": [],
+  "exec": "node --inspect --no-warnings=ExperimentalWarning --loader ts-node/esm -r ts-node/register --env-file=dev.env ./src/index.ts",
+  "exec2": "ts-node --require ./src/instrumentation/oTelTracing.ts ./src/index.ts",
+  "exec3": "ts-node --require ./src/instrumentation/oTelTracing.ts ./src/index.ts | pino-pretty --ignore 'pid,hostname,MESSAGE' --messageFormat ' {MESSAGE}'",
+  "exevc": "ts-node --require ./src/instrumentation/oTelTracing.ts ./src/index.ts | jq -R 'try fromjson catch .'",
+  "execx": "ts-node ./src/index.ts | pino-pretty --ignore 'pid,hostname,MESSAGE' --messageFormat ' {MESSAGE}'"
+}
