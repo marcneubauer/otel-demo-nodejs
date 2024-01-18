@@ -1,0 +1,19 @@
+{
+  "name": "otel-demo",
+  "version": "1.0.0",
+  "description": "node app to generate traces logs and metrics to feed an opentelemetry collector",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "startmsg": "echo \"OTEL_EXPORTER_OTLP_LOGS_PROTOCOL='grpc' OTEL_EXPORTER_OTLP_LOGS_ENDPOINT=http://localhost:4317 OTEL_RESOURCE_ATTRIBUTES=\"service.name=my-service,service.version=1.2.3\" node index.js\""
+  },
+
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+
+    "pino": "^8.17.2",
+    "pino-opentelemetry-transport": "^0.4.1"
+  }
+}
