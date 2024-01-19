@@ -1,0 +1,16 @@
+# .gitignore
+
+# Node.js dependencies
+node_modules/
+
+# TypeScript compiled directory
+build/
+
+# Environment variables
+prod.env
+
+# IDE files
+.idea/
+
+# OS generated files
+.DS_Store
