@@ -23,3 +23,8 @@ source for the tsx stuff: https://dev.to/_staticvoid/how-to-run-typescript-nativ
 Otelcol's own metrics: http://localhost:8888/metrics
 zipkin ui: http://localhost:9411/zipkin/
 prometheus ui: http://0.0.0.0:9090/graph
+
+
+
+Trying out grafana Loki Promtail
+https://raw.githubusercontent.com/grafana/loki/v2.9.1/production/docker-compose.yaml

@@ -1,11 +1,13 @@
 {
-  "name": "otel-demo",
+  "name": "otel-demo-nodejs",
   "version": "1.0.0",
   "description": "node app to generate traces logs and metrics to feed an opentelemetry collector",
   "type": "module",
+  "module": "",
   "scripts": {
-    "start": "npm run info; npm run dev",
+    "start": "pnpm run info; pnpm run dev",
     "info": "cat readme.md",
+    "make it pretty": " | npx pino-pretty ",
     "dev": "node --env-file=dev.env --import=tsx --watch ./src/index.ts",
     "exec2": "node --env-file=dev.env --import=tsx --require ./src/instrumentation/oTelTracing.ts --watch ./src/index.ts",
     "exec3": "ts-node --require ./src/instrumentation/oTelTracing.ts ./src/index.ts | pino-pretty --ignore 'pid,hostname,MESSAGE' --messageFormat ' {MESSAGE}'",
@@ -13,7 +15,7 @@
     "execx": "ts-node ./src/index.ts | pino-pretty --ignore 'pid,hostname,MESSAGE' --messageFormat ' {MESSAGE}'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "marc.neubauer@gmail.com",
   "license": "ISC",
   "dependencies": {
     "@opentelemetry/resources": "^1.20.0",
@@ -23,6 +25,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.11",
+    "pino-pretty": "^10.3.1",
     "prettier": "^3.2.4",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3"

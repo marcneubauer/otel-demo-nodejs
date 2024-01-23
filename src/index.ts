@@ -1,21 +1,32 @@
-import pino from 'pino';
+import {
+  pinoLoggingLib,
+  getLogger,
+} from './instrumentation';
 
-console.log('Starting pino-opentelemetry-transport example');
+console.log('**Starting pino-opentelemetry-transport example**');
 
-const transport = pino.transport({
-  target: 'pino-opentelemetry-transport'
-})
+export default async function main() {
+  // TODO update to await opentelemetry.init() and this does logging tracing etc all async
+  const log = await getLogger();
 
-const logger = pino(transport)
+  doThings();
 
-transport.on('ready', () => {
-  setInterval(() => {
-    logger.info({'test log':generateRandomString(10)})
-  }, 500)
-})
+  function doThings() {
+    setInterval(() => {
+      logStuff();
+    }, 700);
+  }
 
-function generateRandomString(length) {
-  return [...Array(length)]
-      .map(() => Math.random().toString(36)[2])
-      .join('');
+  function logStuff() {
+    // pinoLoggingLib.error(OpenTelemetryResource.attributes);
+    // pinoLoggingLib.info({ 'test log': generateRandomString(10) });
+    log.trace('testing - trace log'); //TODO for some reason Trace logs dont show
+    log.debug('testing - debug log');
+    log.info('testing - info log');
+    log.warn('testing - warn log');
+    log.error('testing - error log');
+    log.fatal('testing - fatal log');
+  }
+
 }
+void main();
