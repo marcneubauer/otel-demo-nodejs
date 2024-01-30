@@ -1,15 +1,5 @@
 {
   "compilerOptions": {
-    "target": "es20217",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "preserve"
   },
   "include": [
     "src"

@@ -14,7 +14,7 @@ const consoleTransport = {
   target: 'pino/file',
   options: {
     //   destination: '1',
-    loggerName: process.env.npm_package_name + 'pino-opentelemetry-transport-example',
+    loggerName: process.env.npm_package_name + 'pino-file-to-console-transport',
     serviceVersion: OpenTelemetryResource.attributes['service.version'] || '0',
     resourceAttributes: OpenTelemetryResource.attributes,
   },
